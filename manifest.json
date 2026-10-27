@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "Forge WebTRANSLATOR OmniLingo PRO",
+  "short_name": "WebTranslator PRO",
+  "version": "3.1.0",
+  "description": "All-in-One KI-Sprachsuite powered by MichisForgeTools: Blitzschnelle Webseiten-Übersetzung, DeepL-Tonalität, Text-Humanizer & Glossar.",
+  "keywords": ["translator", "translation", "chrome extension", "ai", "deepl"],
+  "minimum_chrome_version": "114",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "sidePanel",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*",
+    "http://127.0.0.1:11434/*",
+    "http://localhost:11434/*",
+    "https://translate.googleapis.com/*"
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Mit Forge WebTRANSLATOR OmniLingo PRO übersetzen & optimieren",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "popup/popup.html"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/block-google-translate.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/translator-client.js", "content/dom-translator.js", "content/page-context.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+T"
+      },
+      "description": "Forge WebTRANSLATOR OmniLingo PRO öffnen"
+    }
+  }
+}

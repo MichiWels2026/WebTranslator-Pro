@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forge WebTRANSLATOR OmniLingo PRO - All-in-One KI Sprachsuite</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+        </div>
+        <div class="header-titles">
+          <div class="app-title-row">
+            <span class="app-name">Forge WebTRANSLATOR OmniLingo</span>
+            <span class="badge-pro">PRO</span>
+          </div>
+          <button id="ollama-status-pill" class="status-pill online" type="button" title="Klicken fÃ¼r Engine-Wahl (Turbo / Ollama)">
+            <span class="status-dot"></span>
+            <span class="status-text" id="engine-status-text">âš¡ Turbo</span>
+          </button>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-sidepanel" class="icon-button" type="button" title="Im Seitenpanel Ã¶ffnen" aria-label="Im Seitenpanel Ã¶ffnen">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16h-5V5h5v14z"/></svg>
+        </button>
+        <button id="btn-theme" class="icon-button" type="button" title="Farbschema umschalten" aria-label="Farbschema umschalten">
+          <svg id="theme-icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-bar" role="tablist" aria-label="WebTranslator OberflÃ¤chen">
+      <button class="tab-btn active" role="tab" data-tab="tab-webpage" aria-selected="true">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        Webseite
+      </button>
+      <button class="tab-btn" role="tab" data-tab="tab-auto" aria-selected="false">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        Automatisierung
+      </button>
+      <button class="tab-btn" role="tab" data-tab="tab-text" aria-selected="false">
+        <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+        Freier Text
+      </button>
+    </nav>
+
+    <!-- TAB 1: WEBSEITE (CORE) -->
+    <main id="tab-webpage" class="tab-pane active" role="tabpanel" aria-labelledby="tab-webpage">
+      <!-- Master Enable / Disable Switch -->
+      <section class="master-switch-card">
+        <label class="switch-row" for="chk-master">
+          <span class="switch-text">
+            <strong>Webseiten-Ãœbersetzung</strong>
+            <small id="master-sub">Aktiv â€“ Ã¼bersetzt fremdsprachige Seiten automatisch</small>
+          </span>
+          <span class="switch">
+            <input type="checkbox" id="chk-master" checked aria-label="Ãœbersetzer aktivieren">
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </span>
+        </label>
+      </section>
+
+      <!-- Banner On / Off Switch -->
+      <section class="master-switch-card banner-switch-card">
+        <label class="switch-row" for="chk-banner">
+          <span class="switch-text">
+            <strong>Ãœbersetzungs-Banner</strong>
+            <small id="banner-sub">Auf fremdsprachigen Seiten wird der Ãœbersetzen-Dialog automatisch eingeblendet</small>
+          </span>
+          <span class="switch">
+            <input type="checkbox" id="chk-banner" checked aria-label="Ãœbersetzungs-Banner anzeigen">
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </span>
+        </label>
+      </section>
+
+      <!-- Current Website On / Off Switch (EIN / AUS) -->
+      <section class="master-switch-card site-switch-card" id="site-switch-card">
+        <label class="switch-row" for="chk-site">
+          <span class="switch-text">
+            <strong id="site-switch-title">Diese Webseite</strong>
+            <small id="site-switch-sub">Aktiv â€“ Ãœbersetzung auf dieser Webseite erlaubt</small>
+          </span>
+          <span class="switch">
+            <input type="checkbox" id="chk-site" checked aria-label="FÃ¼r diese Webseite aktivieren">
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </span>
+        </label>
+      </section>
+
+      <!-- Active Webpage Card -->
+      <section class="card page-card">
+        <div class="page-header-row">
+          <div class="page-info">
+            <span class="page-domain" id="page-domain">Aktuelle Webseite</span>
+            <h2 class="page-title" id="page-title">Wird geladen â€¦</h2>
+          </div>
+          <span id="page-badge" class="state-badge original">Original</span>
+        </div>
+
+        <!-- Language Controls -->
+        <div class="lang-row">
+          <div class="select-group">
+            <label for="source">Ausgangssprache</label>
+            <select id="source" class="select-input"></select>
+          </div>
+          <button id="swap" class="swap-btn" type="button" title="Sprachen tauschen" aria-label="Sprachen tauschen">
+            <svg viewBox="0 0 24 24"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"/></svg>
+          </button>
+          <div class="select-group">
+            <label for="target">Zielsprache</label>
+            <select id="target" class="select-input"></select>
+          </div>
+        </div>
+
+        <div class="quick-pairs-wrap">
+          <button type="button" class="chip-btn" data-source="Automatisch erkennen" data-target="Deutsch">Auto â†’ Deutsch</button>
+          <button type="button" class="chip-btn" data-source="Automatisch erkennen" data-target="TÃ¼rkisch">Auto â†’ TÃ¼rkisch</button>
+          <button type="button" class="chip-btn" data-source="Automatisch erkennen" data-target="Bosnisch">Auto â†’ Bosnisch</button>
+          <button type="button" class="chip-btn" data-source="Automatisch erkennen" data-target="Kroatisch">Auto â†’ Kroatisch</button>
+          <button type="button" class="chip-btn" data-source="Englisch" data-target="Deutsch">Englisch â†’ Deutsch</button>
+          <button type="button" class="chip-btn" data-source="Deutsch" data-target="Englisch">Deutsch â†’ Englisch</button>
+          <button type="button" class="chip-btn" data-source="FranzÃ¶sisch" data-target="Deutsch">FranzÃ¶sisch â†’ Deutsch</button>
+          <button type="button" class="chip-btn" data-source="Spanisch" data-target="Deutsch">Spanisch â†’ Deutsch</button>
+        </div>
+      </section>
+
+      <!-- Main Action Section -->
+      <section class="main-action-section">
+        <!-- Shown when the translator is globally disabled -->
+        <div id="translator-off-hint" class="off-hint" style="display: none;">
+          Ãœbersetzer ist ausgeschaltet. Aktiviere den Schalter oben, um Seiten wieder zu Ã¼bersetzen.
+        </div>
+
+        <!-- Big Translate Button -->
+        <button id="btn-translate-page" class="giant-btn" type="button">
+          <svg class="giant-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          <div class="giant-text-group">
+            <span class="giant-title" id="btn-translate-title">Webseite jetzt Ã¼bersetzen</span>
+            <span class="giant-sub" id="btn-translate-sub">Ãœbersetzt die gesamte Seite direkt im Browser-Layout</span>
+          </div>
+        </button>
+
+        <!-- Toggle Button (shown when already translated) -->
+        <div id="translated-controls" class="translated-controls" style="display: none;">
+          <button id="btn-toggle-view" class="secondary-btn" type="button">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            <span id="btn-toggle-label">Original anzeigen</span>
+          </button>
+          <button id="btn-restore-page" class="danger-btn" type="button" title="Ãœbersetzung verwerfen & Original wiederherstellen">
+            ZurÃ¼cksetzen
+          </button>
+        </div>
+
+        <!-- In-Page Bar Trigger -->
+        <button id="btn-show-bar" class="subtle-link-btn" type="button">
+          ðŸ“Œ Ãœbersetzungsleiste oben auf der Webseite einblenden
+        </button>
+      </section>
+
+      <!-- Automation Quick Checkboxes -->
+      <section class="card auto-quick-card">
+        <h3 class="card-subtitle">Automatisierungsregeln</h3>
+        <label class="check-row">
+          <input type="checkbox" id="chk-auto-domain" class="custom-check">
+          <span class="check-label">
+            <strong>Diese Domain immer automatisch Ã¼bersetzen</strong>
+            <small id="chk-domain-text">Auf dieser Website automatisch Ã¼bersetzen</small>
+          </span>
+        </label>
+        <label class="check-row">
+          <input type="checkbox" id="chk-auto-lang" class="custom-check">
+          <span class="check-label">
+            <strong>Alle Seiten in dieser Sprache immer Ã¼bersetzen</strong>
+            <small id="chk-lang-text">z. B. alle englischsprachigen Webseiten</small>
+          </span>
+        </label>
+        <label class="check-row">
+          <input type="checkbox" id="chk-never-domain" class="custom-check">
+          <span class="check-label">
+            <strong>Diese Website nie Ã¼bersetzen</strong>
+            <small>Kein Ãœbersetzungs-Hinweis auf dieser Domain</small>
+          </span>
+        </label>
+        <label class="check-row">
+          <input type="checkbox" id="chk-never-lang" class="custom-check">
+          <span class="check-label">
+            <strong>Diese Sprache nie Ã¼bersetzen</strong>
+            <small id="chk-never-lang-text">Nie auf Seiten in dieser Sprache anbieten</small>
+          </span>
+        </label>
+      </section>
+    </main>
+
+    <!-- TAB 2: AUTOMATISIERUNG & EINSTELLUNGEN -->
+    <section id="tab-auto" class="tab-pane" role="tabpanel" style="display: none;" aria-labelledby="tab-auto">
+      <div class="settings-content">
+        <!-- Translation Engine Switch -->
+        <div class="settings-group">
+          <h3 class="settings-title">Ãœbersetzungs-Engine</h3>
+          <div class="form-row">
+            <label for="cfg-engine">Geschwindigkeits-Modus</label>
+            <select id="cfg-engine" class="select-input">
+              <option value="turbo">âš¡ Turbo-Modus (Superschnell in 0.5s â€“ wie DeepL)</option>
+              <option value="ollama">ðŸ”’ Lokale KI-Engine (Ollama â€“ 100% Offline & Privat)</option>
+            </select>
+            <p class="hint-text">Turbo Ã¼bersetzt Webseiten sofort ohne Wartezeit. Ollama nutzt lokale Modelle.</p>
+          </div>
+        </div>
+
+        <!-- TonalitÃ¤t & Anrede (DeepL-Stil) -->
+        <div class="settings-group">
+          <h3 class="settings-title">TonalitÃ¤t & Anrede (DeepL-Stil)</h3>
+          <div class="form-row">
+            <label for="cfg-tone">Standard-Tonfall fÃ¼r Ãœbersetzungen</label>
+            <select id="cfg-tone" class="select-input">
+              <option value="standard">âš¡ Standard (Automatisch / NatÃ¼rlich)</option>
+              <option value="human">ðŸŒ¿ Menschlich (Lebendig & flÃ¼ssig wie ein echter Muttersprachler)</option>
+              <option value="formal">ðŸ‘” Formell (Sie / Professioneller Business-Stil)</option>
+              <option value="informal">ðŸ¤ Informell (Du / Freundlich & Locker)</option>
+            </select>
+            <p class="hint-text">Gilt fÃ¼r Webseiten, markierte Textpassagen und freien Text.</p>
+          </div>
+        </div>
+
+        <!-- Eigenes Glossar (WÃ¶rterbuch-Regeln wie bei DeepL) -->
+        <div class="settings-group">
+          <h3 class="settings-title">Eigenes Glossar (WÃ¶rterbuch-Filter)</h3>
+          <p class="hint-text">Definiere feste Ãœbersetzungen fÃ¼r Fachbegriffe, Marken oder Namen:</p>
+          <div id="glossary-list" class="tag-list-box"></div>
+          <div class="add-domain-row" style="margin-top: 8px;">
+            <input type="text" id="input-glossary-from" class="select-input" placeholder="Ursprungsbegriff (z. B. Prompt)" style="flex: 1;">
+            <input type="text" id="input-glossary-to" class="select-input" placeholder="WunschÃ¼bersetzung" style="flex: 1;">
+            <button id="btn-add-glossary" class="action-btn" type="button">+ Regel</button>
+          </div>
+        </div>
+
+        <!-- Auto Translate Domains List -->
+        <div class="settings-group">
+          <h3 class="settings-title">Automatisch Ã¼bersetzte Domains</h3>
+          <p class="hint-text">Auf diesen Webseiten startet die Ãœbersetzung sofort beim Laden:</p>
+          <div id="auto-domains-list" class="tag-list-box"></div>
+          <div class="add-domain-row">
+            <input type="text" id="input-add-domain" class="select-input" placeholder="z. B. github.com">
+            <button id="btn-add-domain" class="action-btn" type="button">+ HinzufÃ¼gen</button>
+          </div>
+        </div>
+
+        <!-- Never Translate Sites -->
+        <div class="settings-group">
+          <h3 class="settings-title">Nie Ã¼bersetzte Websites</h3>
+          <p class="hint-text">Auf diesen Webseiten erscheint kein Ãœbersetzungs-Hinweis:</p>
+          <div id="never-domains-list" class="tag-list-box"></div>
+          <div class="add-domain-row">
+            <input type="text" id="input-add-never-domain" class="select-input" placeholder="z. B. google.com">
+            <button id="btn-add-never-domain" class="action-btn" type="button">+ HinzufÃ¼gen</button>
+          </div>
+        </div>
+
+        <!-- Never Translate Languages -->
+        <div class="settings-group">
+          <h3 class="settings-title">Nie Ã¼bersetzte Sprachen</h3>
+          <p class="hint-text">Seiten in diesen Sprachen werden nie automatisch Ã¼bersetzt:</p>
+          <div id="never-languages-list" class="tag-list-box"></div>
+          <div class="add-domain-row">
+            <select id="input-add-never-lang" class="select-input" style="flex:1;"></select>
+            <button id="btn-add-never-lang" class="action-btn" type="button">+ HinzufÃ¼gen</button>
+          </div>
+        </div>
+
+        <!-- Ollama Connection -->
+        <div class="settings-group">
+          <h3 class="settings-title">Ollama KI-Modell</h3>
+          <div class="form-row">
+            <label for="cfg-base-url">Ollama Server-URL</label>
+            <div class="input-with-button">
+              <input id="cfg-base-url" class="select-input" type="url" value="http://127.0.0.1:11434">
+              <button id="btn-test-connection" class="action-btn" type="button">Testen</button>
+            </div>
+            <p id="connection-test-result" class="hint-text"></p>
+          </div>
+
+          <div class="form-row">
+            <label for="cfg-model">Verwendetes LLM-Modell</label>
+            <div class="input-with-button">
+              <select id="cfg-model" class="select-input"></select>
+              <button id="btn-refresh-models" class="icon-button" type="button" title="Modelle neu laden" aria-label="Modelle neu laden">
+                <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: FREIER TEXT & SCHREIBASSISTENT (DEEPL-STIL) -->
+    <section id="tab-text" class="tab-pane" role="tabpanel" style="display: none;" aria-labelledby="tab-text">
+      <section class="card text-card">
+        <div class="card-toolbar">
+          <span class="card-heading">Ãœbersetzen & Text optimieren</span>
+          <div class="toolbar-actions">
+            <button id="btn-free-humanize" class="tool-btn" type="button" title="Diesen Text sofort menschlicher klingen lassen" style="border-color: #10b981; color: #059669;">ðŸŒ¿ Menschlicher</button>
+            <button id="btn-free-rewrite" class="tool-btn" type="button" title="Text grammatikalisch & stilistisch verfeinern (DeepL Write)">âœ¨ Verbessern</button>
+            <button id="btn-clear-free-text" class="tool-btn" type="button">Leeren</button>
+          </div>
+        </div>
+
+        <!-- Tone switcher row -->
+        <div class="quick-pairs-wrap" style="margin-bottom: 8px;">
+          <button type="button" class="chip-btn active" data-free-tone="standard">âš¡ Standard</button>
+          <button type="button" class="chip-btn" data-free-tone="human">ðŸŒ¿ Menschlich</button>
+          <button type="button" class="chip-btn" data-free-tone="formal">ðŸ‘” Formell (Sie)</button>
+          <button type="button" class="chip-btn" data-free-tone="informal">ðŸ¤ Du (Locker)</button>
+        </div>
+
+        <textarea id="free-input-text" class="text-area" rows="3" placeholder="Hier Text zum Ãœbersetzen oder Verbessern eingeben â€¦"></textarea>
+        <div class="stats-row">
+          <span id="free-input-stats">0 Zeichen â€¢ 0 WÃ¶rter</span>
+        </div>
+
+        <button id="btn-translate-free" class="primary-btn" type="button">âš¡ Text jetzt Ã¼bersetzen</button>
+
+        <textarea id="free-output-text" class="text-area" rows="3" readonly placeholder="Ãœbersetzung â€¦" style="margin-top: 10px;"></textarea>
+
+        <div class="stats-row">
+          <span id="free-output-stats">0 Zeichen â€¢ 0 WÃ¶rter</span>
+          <div class="output-actions">
+            <button id="btn-free-copy" class="tool-btn" type="button">ðŸ“‹ Kopieren</button>
+            <button id="btn-free-speak" class="tool-btn" type="button">ðŸ”Š Vorlesen</button>
+          </div>
+        </div>
+
+        <!-- DeepL Alternatives section -->
+        <div id="free-alts-box" style="display: none; margin-top: 10px; padding: 8px; background: var(--card-alt); border: 1px solid var(--border); border-radius: 8px;">
+          <span style="font-size: 11px; font-weight: 700; color: var(--text-secondary); display: block; margin-bottom: 6px;">Alternative Formulierungen:</span>
+          <div id="free-alts-list" style="display: flex; flex-direction: column; gap: 4px;"></div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <script src="../content/translator-client.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
+
