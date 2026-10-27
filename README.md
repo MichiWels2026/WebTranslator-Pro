@@ -1,4 +1,4 @@
-# Forge WebTRANSLATOR OmniLingo PRO 3.1.0
+# Forge WebTRANSLATOR OmniLingo PRO 3.2.0
 
 Echter, automatischer lokaler KI-Webseitenübersetzer für Google Chrome powered by Ollama – übersetzt komplette Webseiten direkt im Browser-Layout (In-Place DOM-Übersetzung wie Google Translator, aber privat, lokal und mit moderner KI-Qualität).
 

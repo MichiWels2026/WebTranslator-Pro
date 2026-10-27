@@ -690,6 +690,26 @@ button { font-family: inherit; }
 .tab-pane { display: none; }
 .tab-pane.active { display: flex; flex-direction: column; gap: 10px; }
 
+/* ============ Footer / Donation ============ */
+.app-footer { display: flex; flex-direction: column; align-items: center; gap: 7px; padding-top: 4px; }
+.donate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.donate-btn:hover { border-color: var(--accent); color: var(--accent-text); background: var(--accent-soft); }
+.donate-heart { font-size: 13px; }
+.donate-note { margin: 0; font-size: 10px; color: var(--muted); }
+
 /* ============ Animations ============ */
 @keyframes wtFadeUp {
   from { opacity: 0; transform: translateY(6px); }

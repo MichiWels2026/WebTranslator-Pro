@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "Forge WebTRANSLATOR OmniLingo PRO",
   "short_name": "WebTranslator PRO",
-  "version": "3.1.0",
-  "description": "All-in-One KI-Sprachsuite powered by MichisForgeTools: Blitzschnelle Webseiten-Übersetzung, DeepL-Tonalität, Text-Humanizer & Glossar.",
+  "version": "3.2.0",
+  "description": "All-in-One KI-Sprachsuite powered by MichisForgeTools: Blitzschnelle Webseiten-Ãœbersetzung, DeepL-TonalitÃ¤t, Text-Humanizer & Glossar.",
   "keywords": ["translator", "translation", "chrome extension", "ai", "deepl"],
   "minimum_chrome_version": "114",
   "permissions": [
@@ -28,7 +28,7 @@
     "128": "icons/icon-128.png"
   },
   "action": {
-    "default_title": "Mit Forge WebTRANSLATOR OmniLingo PRO übersetzen & optimieren",
+    "default_title": "Mit Forge WebTRANSLATOR OmniLingo PRO Ã¼bersetzen & optimieren",
     "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "icons/icon-16.png",
@@ -60,7 +60,8 @@
       "suggested_key": {
         "default": "Alt+Shift+T"
       },
-      "description": "Forge WebTRANSLATOR OmniLingo PRO öffnen"
+      "description": "Forge WebTRANSLATOR OmniLingo PRO Ã¶ffnen"
     }
   }
 }
+

@@ -503,6 +503,16 @@
       }
     });
 
+    // Donate / Spenden Button (freiwillig – kein Abo, kein Paywall)
+    $('btn-donate').addEventListener('click', () => {
+      const donateUrl = 'https://github.com/sponsors/MichiWels2026';
+      try {
+        chrome.tabs.create({ url: donateUrl });
+      } catch (e) {
+        window.open(donateUrl, '_blank');
+      }
+    });
+
     // Language Swapper
     $('swap').addEventListener('click', () => {
       const s = $('source').value;

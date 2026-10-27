@@ -1,5 +1,11 @@
 # Änderungsprotokoll
 
+## 3.2.0 – Spenden-Button & klare Free-Positionierung
+
+- **Freiwilliger Spenden-Button:** Neuer Footer-Button „Mach mit – freiwillige Spende" im Popup (führt zu GitHub Sponsors / eigener Spenden-URL).
+- **Kostenlose Positionierung:** Hinweistext im Footer: „100 % kostenlos · Keine Abos · Keine Credits · Nur Spenden".
+- **Kein Paywall, kein Credit-System:** Keine Token-, Wörter- oder Credits-Käufe, keine Abos – komplett kostenlos und privat.
+
 ## 3.1.0 – Hover-Tooltip, Store-Optimierung & Datenschutz
 
 - **Hover-Tooltip (PRO-Feature):** Beim Überfahren eines bereits übersetzten Textbereichs wird jetzt die Original-Vorschau in einer eleganten Bubble angezeigt – DeepL-/Google-Style Hover Preview.
